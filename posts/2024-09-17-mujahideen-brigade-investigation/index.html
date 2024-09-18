@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<style type=text/css>body{font-family:monospace;}</style>
+	<title>Mujahideen Brigade Investigation</title>
+	<meta name="description" content="Investigator &amp; Security Researcher, Contributor Boring Security DAO, ex-BlowfishXYZ">
+	
+	<link rel="stylesheet" href="/css/style.css">
+	
+	
+</head>
+<body>
+	<header>
+	=================================<br>
+	== <a href="http://vile.github.io/">Investigations by 0xFantasy</a> ==<br>
+	=================================
+	<div style="float: right;"></div><br>
+	<p>
+	<nav>
+			<a href="/"><b>Start</b></a>.
+			
+</header>
+
+	
+	<main>
+		<article>
+			<h1>Mujahideen Brigade Investigation</h1>
+			<b><time>2024-09-17 21:27:38</time></b>
+		       
+		           <a href="/tags/default">default</a>
+        	       
+		           <a href="/tags/osint">osint</a>
+        	       
+		           <a href="/tags/terrorism">terrorism</a>
+        	       
+
+			<div>
+				<h2 id="preface">Preface</h2>
+<p>This is one of two articles based on &ldquo;prompted&rdquo; investigations. Starting out with a initial question and/or piece of media, the investigation is still open ended.</p>
+<p>Initial Prompt:</p>
+<p>How much information can you extract from the poster below? Bonus points for scraping any blockchain addresses with subsequent tracing.</p>
+<p>
+<figure>
+  <img src="./images/amb-investigation/Original%20Advertisement.png" alt="[Original Advertisement.png]" />
+</figure>
+
+
+</p>
+<h2 id="initial-advertisement-analysis">Initial Advertisement Analysis</h2>
+<p>At an initial glance, this seems to be a cropped or only part of a full image. The question specifically asks for blockchain addresses, however the text content of the image only asks for donations to help the Palestinian people without any further context or information.</p>
+<p>First, let&rsquo;s figure out who this image might be promoted by. There is a large logo on the top left of the image consisting of a masked person holding a rifle along with other iconography and Arabic script. The same logo can be seen on the headband in the bottom right.</p>
+<p>This logo is consistent with ones displayed by the Mujahideen Brigades a/k/a Al-Mujahidin Brigades (AMB); this is an OFAC-sanctioned entity active in Gaza, the West Bank, and Cairo (<a href="https://www.opensanctions.org/entities/NK-eWVNkBLnU4whv7rUPaEv2G/">https://www.opensanctions.org/entities/NK-eWVNkBLnU4whv7rUPaEv2G/</a>).</p>
+<p>When looking for a social media presence for this group, various sources mentioned X (formerly Twitter) and Telegram accounts posting and claiming responsibility for various attacks. However, these sources either did not directly mention the usernames of accounts, provide links to the accounts, and/or images used in the sources were not original (e.g., they were heavily censored). However, one specifically did confirm my original suspicion that this was, in-fact, a cropped image (<a href="https://www.memri.org/cjlab/gaza-based-al-mujahideen-brigades-which-kidnapped-israelis-october-7-opens-new-x-account">https://www.memri.org/cjlab/gaza-based-al-mujahideen-brigades-which-kidnapped-israelis-october-7-opens-new-x-account</a>)</p>
+<p>
+<figure>
+  <img src="./images/amb-investigation/Memri%20Censored%20Adverisement.avif" alt="[Memri Censored Adverisement.avif]" />
+</figure>
+
+
+</p>
+<p>Continuing to research, <a href="https://www.trmlabs.com/post/us-doj-charges-hamas-leaders-with-october-7-attacks-details-hamas-use-of-cryptocurrencies">a TRM blog</a> talks about several DOJ charges against leaders of Hamas and their relation to sanctions evasion by using cryptocurrency. In the same article, the AMB&rsquo;s solicitation of cryptocurrency is mentioned, which includes an example promotional image. In this fully uncensored and uncropped image, the same logos, style, and layout is used, along with three cryptocurrency addresses (and their respective QR codes) specifically for TRC20 USDT, Bitcoin, and Ether, as well as two Telegram links.</p>
+<p>Cryptocurrency addresses present are:</p>
+<ul>
+<li><a href="https://tronscan.org/#/address/TBL1w8wuCuTmwcDXx97AWcTNLLLAWQh3mg">TBL1w8wuCuTmwcDXx97AWcTNLLLAWQh3mg</a> (Tron)</li>
+<li><a href="https://mempool.space/address/bc1qf42hkrnn8uj8z7kdk29dqs6hfzw6u06cpa4y70">bc1qf42hkrnn8uj8z7kdk29dqs6hfzw6u06cpa4y70</a> (Bitcoin)</li>
+<li><a href="https://etherscan.io/address/0xeF8105D04D85395FF8328b694729687E54Bf68C5">0xeF8105D04D85395FF8328b694729687E54Bf68C5</a> (Ether)</li>
+</ul>
+<p>Telegram usernames present are:</p>
+<ul>
+<li>@kholafaps (&ldquo;Channel 1&rdquo;)</li>
+<li>@darebmojahden (&ldquo;Channel 2&rdquo;)</li>
+</ul>
+<p>
+<figure>
+  <img src="./images/amb-investigation/Uncensored%20TRM%20Ad.jpeg" alt="[Uncensored TRM Ad.jpeg]" />
+</figure>
+
+
+</p>
+<p><em>Channel 1</em> (Arabic: مجمع الخلفاء الراشدين الدعوي - غزة; English: Rashidun Caliphs Call Complex - Gaza) predominantly contains general Islamic-related content, however it has solicited cryptocurrency donations multiple times to assist &ldquo;struggling people in Gaza.&rdquo;</p>
+<p>
+<figure>
+  <img src="./images/amb-investigation/Rashidun%20Donation%20Ad.jpg" alt="[Rashidun Donation Ad.jpg]" />
+</figure>
+
+
+</p>
+<p><em>Channel 2</em>, specifically, is run by the AMB (Arabic: كتائب المجاهدين - فلسطين; English: Mujahideen Brigades - Palestine). <em>Channel 2</em> consistently posts on a daily basis about attacks and actions attributed to the AMB. Along with this, calls for cryptocurrency donations are occasionally posted. Analyzing donation advertisements posted in the channel over the past year, it can be seen that the first use of the original image was on February 8th, 2024. The cryptocurrency addresses used in the image are consistent with the ones present in the TRM article.  Currently, as of September 15th, none of these addresses are publicly attributed or sanctioned by OFAC (as part of the SDN list).</p>
+<p>
+<figure>
+  <img src="./images/amb-investigation/AMB%20Donation%20Ad.jpg" alt="[AMB Donation Ad.jpg]" />
+</figure>
+
+
+</p>
+<h2 id="on-chain-donation-address-tracing">On-Chain Donation Address Tracing</h2>
+<p>Starting with the TRX address (<a href="https://tronscan.org/#/address/TBL1w8wuCuTmwcDXx97AWcTNLLLAWQh3mg">TBL1w</a>), as it has the largest on-chain volume, it quickly becomes clear that the largest share of donations are direct USDT withdrawals from Binance. Spread across 32 incoming transactions, roughly USD$2,710 has been sent to the address. Following Binance, <a href="https://platform.arkhamintelligence.com/explorer/address/TU4vEruvZwLLkSfV9bNw12EJTPvNr7Pvaa">ByBit</a> and an unknown exchange (<a href="https://platform.arkhamintelligence.com/explorer/address/TXtp6FhA3NXP2eZehTu3W1CptFjaMECDcJ">TXtp6</a>) have withdrawals of between USD$500 and USD$600. MEXC and Gate.io are also present in incoming transactions, but have a significantly lower combined dollar value (less than USD$100). The remaining volume consists of independent wallets funded by some of the previously mentioned CEXs (such as Gate.io), as well as unmentioned CEXs (such as KuCoin and Bitget, and OKX). While it is concerning that such a large amount of direct withdrawals have been made to the addresses, direct CEX withdrawals have ceased as of March 11th, 2024; all subsequent funds come from self-hosted wallets.</p>
+<p>
+<figure>
+  <img src="./images/amb-investigation/AMB-TRX-small.png" alt="[AMB-TRX-small.png]" />
+</figure>
+
+
+
+[<a href="https://metasleuth.io/result/tron/TBL1w8wuCuTmwcDXx97AWcTNLLLAWQh3mg?source=cbdec801-3e4b-45a2-892d-5f44eb389bf8">https://metasleuth.io/result/tron/TBL1w8wuCuTmwcDXx97AWcTNLLLAWQh3mg?source=cbdec801-3e4b-45a2-892d-5f44eb389bf8</a>; <a href="https://postimg.cc/1VcVr7Yv">https://postimg.cc/1VcVr7Yv</a>]</p>
+<p>Now looking at the BTC address (<a href="https://mempool.space/address/bc1qf42hkrnn8uj8z7kdk29dqs6hfzw6u06cpa4y70">bc1qf</a>), again, the vast majority of incoming volume is from CEXs, specifically <a href="https://platform.arkhamintelligence.com/explorer/tx/783cb5fe6635348960b46ed76c068fa9a1c210cb6192c534a704cda8d0367968">Binance</a>, <a href="https://platform.arkhamintelligence.com/explorer/tx/5adb0f91019011c5dd0bebcd3d92050e18c90ba5f1dba11c008b4b68f8c65113">Crypto.com</a>, and <a href="https://platform.arkhamintelligence.com/explorer/tx/4f1fe8ad3215ba55201bcdeece14793a3ff6790e3d29f39a1f427e092ae22a4c">Coinbase</a>. And, again, Binance makes up the largest share of CEX withdrawal activity (greater than 50%). The remaining volume consists of self-hosted wallets, except with a larger distance from the original CEX funding compared to Tron. However, the total USD$ volume of the BTC address is less than 10% compared to Tron (~USD$230).</p>
+<p>
+<figure>
+  <img src="./images/amb-investigation/AMB-BTC-small.png" alt="[AMB-BTC-small.png]" />
+</figure>
+
+
+</p>
+<p>[<a href="https://metasleuth.io/result/btc/bc1qf42hkrnn8uj8z7kdk29dqs6hfzw6u06cpa4y70?source=91642e48-4c4b-490d-bf33-278800f9f33e">https://metasleuth.io/result/btc/bc1qf42hkrnn8uj8z7kdk29dqs6hfzw6u06cpa4y70?source=91642e48-4c4b-490d-bf33-278800f9f33e</a>; <a href="https://postimg.cc/JD6DtHvh">https://postimg.cc/JD6DtHvh</a>]</p>
+<p>The ETH address is slightly more interesting compared to Tron and Bitcoin. Activity is spread across both L1 Ethereum and BSC. CEX withdrawals are almost solely from BitGo, but a single small withdrawal was also made from Bitget. A large portion of funds eventually get deposited back into Bitget, whether directly or through an intermediary wallet. Remaining self-hosted wallet volume is consist with activity on TRX and BTC; some donating wallets on Ethereum have also donated to other OFAC- and CSL-sanctioned Middle Eastern related entities, such as <a href="https://www.opensanctions.org/entities/ofac-47635/">Gaza Now</a>.</p>
+<p>It is also to note that the <a href="https://etherscan.io/tx/0xc853c0a0fac9ccb66422aa840756594b07df9c00b2aceff02a99d1b2000efb5e">single largest incoming transaction</a> of any chain is present on Ethereum, a ~0.615 ETH &ldquo;donation&rdquo; worth roughly USD$1600 at the time it was sent.</p>
+<p>
+<figure>
+  <img src="./images/amb-investigation/AMB-ETH-small.png" alt="[AMB-ETH-small.png]" />
+</figure>
+
+
+
+[<a href="https://metasleuth.io/result/eth/0xeF8105D04D85395FF8328b694729687E54Bf68C5?source=dc3be3bd-46b4-42a0-b22b-2fdbb0d3c311">https://metasleuth.io/result/eth/0xeF8105D04D85395FF8328b694729687E54Bf68C5?source=dc3be3bd-46b4-42a0-b22b-2fdbb0d3c311</a>; <a href="https://postimg.cc/H8m578tD">https://postimg.cc/H8m578tD</a>]</p>
+<h3 id="gaza-donation-ruse">Gaza Donation Ruse</h3>
+<p>While looking at the surface of <em>Channel 1</em>, it seems to be solely promoting religious information and updates those affected in Palestine. However, analyzing the handful of solicitations for donations, makes the connection between Rashidun and the AMB much clearer.</p>
+<p>The first cryptocurrency donation solicitation from <em>Channel 1</em> was on November 26th, 2023. This precedes the original AMB solicitation of interest by over four months. Looking back, the first cryptocurrency donation solicitation from <em>Channel 2</em> was also on November 26th, 2023, in addition to this, it was also a forwarded message from <em>Channel 1</em>. However, when following the forwarded message between the channels, the content is completely different; the message is marked as &ldquo;edited&rdquo; and contains a different cryptocurrency address. This was likely to be a mistake that was later corrected to keep perceived distance between the groups and channels.</p>
+<p>
+<figure>
+  <img src="./images/amb-investigation/First%20Donation%20Ad%20Comparison.png" alt="[First Donation Ad Comparison.png]" />
+</figure>
+
+
+
+[Left: <em>Channel 1</em> (Rashidun); Right: <em>Channel 2</em> (AMB)]</p>
+<p>Cryptocurrency addresses present in <em>Channel 1</em>:</p>
+<ul>
+<li><a href="https://tronscan.org/#/address/TBL1w8wuCuTmwcDXx97AWcTNLLLAWQh3mg">TBL1w8wuCuTmwcDXx97AWcTNLLLAWQh3mg</a> (Tron)</li>
+<li><a href="https://mempool.space/address/bc1qf42hkrnn8uj8z7kdk29dqs6hfzw6u06cpa4y70">bc1qf42hkrnn8uj8z7kdk29dqs6hfzw6u06cpa4y70</a> (Bitcoin)</li>
+<li><a href="https://etherscan.io/address/0xeF8105D04D85395FF8328b694729687E54Bf68C5">0xeF8105D04D85395FF8328b694729687E54Bf68C5</a> (Ether)</li>
+<li><a href="https://etherscan.io/address/0x2F6cF9C58Ff6F82686E474F20dFD6a46199D655A">0x2F6cF9C58Ff6F82686E474F20dFD6a46199D655A</a> (Ether)</li>
+<li><a href="https://etherscan.io/address/0x5cb8ab15610502478a7f784AE2DAeEfe45aCb4Cd">0x5cb8ab15610502478a7f784AE2DAeEfe45aCb4Cd</a> (Ether)</li>
+<li><a href="https://mempool.space/address/bc1q8y6wp8dmkjx0e3ngtlmjx6n9ry369khd3muum7">bc1q8y6wp8dmkjx0e3ngtlmjx6n9ry369khd3muum7</a> (Bitcoin; QR Code Only)</li>
+<li><a href="https://mempool.space/address/bc1qmakfg2avr5c5n8dm30cfaeqa273hc6pfpyswj9">bc1qmakfg2avr5c5n8dm30cfaeqa273hc6pfpyswj9</a> (Bitcoin; Text Only)</li>
+</ul>
+<p>When looking on Ethereum and Bitcoin, the connection becomes very apparent, very quickly.</p>
+<p>
+<figure>
+  <img src="./images/amb-investigation/Mismatched%20QR%20Code.png" alt="[Mismatched QR Code.png]" />
+</figure>
+
+
+</p>
+<p>
+<figure>
+  <img src="./images/amb-investigation/AMB-ETH-2-small.png" alt="[AMB-ETH-2-small.png]" />
+</figure>
+
+
+
+[<a href="https://metasleuth.io/result/eth/0xeF8105D04D85395FF8328b694729687E54Bf68C5?source=8ebcd070-2aeb-461a-aaf5-372fbc071dc6">https://metasleuth.io/result/eth/0xeF8105D04D85395FF8328b694729687E54Bf68C5?source=8ebcd070-2aeb-461a-aaf5-372fbc071dc6</a>; <a href="https://postimg.cc/xJgP3Ppy">https://postimg.cc/xJgP3Ppy</a>; If the graphic is difficult to understand, please use the interactive MetaSleuth chart link]</p>
+<p>
+<figure>
+  <img src="./images/amb-investigation/AMB&#43;Rashidun-BTC-small.png" alt="[AMB&#43;Rashidun-BTC-small.png]" />
+</figure>
+
+
+
+[<a href="https://metasleuth.io/result/btc/bc1qf42hkrnn8uj8z7kdk29dqs6hfzw6u06cpa4y70?source=648d9b93-22ed-4c8e-8aea-a35d1dff13da">https://metasleuth.io/result/btc/bc1qf42hkrnn8uj8z7kdk29dqs6hfzw6u06cpa4y70?source=648d9b93-22ed-4c8e-8aea-a35d1dff13da</a>; <a href="https://postimg.cc/3dgJGkb9">https://postimg.cc/3dgJGkb9</a>]</p>
+<p>In these charts, the blue nodes are known-AMB addresses, the red nodes are new Rashidun (<em>Channel 2</em>) addresses, then the green and gray pairs of nodes are the same addresses across different networks (ETH and BSC).</p>
+<p>On Ethereum, both AMB- and Rashidun-associated addresses have utilized the same <a href="https://platform.arkhamintelligence.com/explorer/address/0x27486693cb339AfF673BCf66736227B559486a20">Bitget deposit address</a> (on different networks), as well as have sent funds directly to each other. Similar activity is also present on Bitcoin when utilizing the same <a href="https://platform.arkhamintelligence.com/explorer/address/34TBpq7eJXDgC1vrv3tbTnCDe79eFzj97e">Payeer deposit address</a>.</p>
+<p>It can also be seen on the BTC chart that one address has donated to both AMB and Rashidun wallets.</p>
+<p>View Arkham entities of the <a href="https://platform.arkhamintelligence.com/explorer/entity/67b7fce5-5561-4da2-8547-6096c1548276">AMB</a>, <a href="https://platform.arkhamintelligence.com/explorer/entity/cf627155-5f72-4ece-ba88-88ae0e6457d5">Rashidun</a>, and <a href="https://platform.arkhamintelligence.com/explorer/entity/5e4883a7-cab2-40a2-a78c-efd81dd07289">AMB Associated</a> wallets.</p>
+<h2 id="other-opsec-notes">Other OPSEC Notes</h2>
+<p>Trust Wallet seems to be the primary, if not the sole, wallet software used across both channels. All QR codes posted are consistent with the style used by the Trust Wallet mobile app. It is unclear from promotional images what mobile OS is being used.</p>
+<p>The AMB (and Rashidun by extension) rely entirely on centralized, off-chain platforms for moving and concealing funds. No on-chain concealment, coin-join, chain hopping, or DeFi was observed. Except for a single DEX swap on BSC using Mimic Finance (<a href="https://medium.com/mimicfi/introducing-mimic-v3-diving-into-new-depths-of-efficiency-4e564ad2714a">which is integrated into Trust Wallet</a>).</p>
+
+			</div>
+		</article>
+	</main>
+<aside>
+	<div>
+		<div>
+			<h3>LATEST POSTS</h3>
+		</div>
+		<div>
+			<ul>
+				
+				<li><a href="/posts/2024-09-17-mujahideen-brigade-investigation/">Mujahideen Brigade Investigation</a></li>
+				
+			</ul>
+		</div>
+	</div>
+</aside>
+
+
+	<footer>
+	<p>&copy; 2024 <a href="http://vile.github.io/"><b>Investigations by 0xFantasy</b></a>.
+	</p>
+</footer>
+
+</body>
+</html>
