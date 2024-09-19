@@ -43,7 +43,7 @@
 
 			<div>
 				<h2 id="preface">Preface</h2>
-<p>This is the second of two articles based on “prompted” investigations. Starting out with a initial question and/or piece of media, the investigation is still open ended.</p>
+<p>This is the second of two articles based on “prompted” investigations. Starting out with an initial question and/or piece of media, the investigation is still open ended.</p>
 <p>Initial Prompt:</p>
 <p>“Tehran Tokyo” by Sasy was published in 2021. An ad placement for an online casino is found in <a href="https://www.youtube.com/watch?v=NNtMb0DrBRA">this music video</a>. To the best of your effort, answer the following questions:</p>
 <ol>
@@ -77,7 +77,7 @@
 
 
 </p>
-<p>Looking into SSL certificates yield no results, as the &ldquo;info&rdquo; and &ldquo;com&rdquo; issuing organizations are different, Cloudflare and Google Trust Services (GTS) respectively. However, <a href="https://developers.cloudflare.com/ssl/reference/certificate-authorities/">Cloudflare does use GTS</a> as a certificate authority as part of their universal SSL feature.</p>
+<p>Looking into SSL certificates yields no results, as the &ldquo;info&rdquo; and &ldquo;com&rdquo; issuing organizations are different, Cloudflare and Google Trust Services (GTS) respectively. However, <a href="https://developers.cloudflare.com/ssl/reference/certificate-authorities/">Cloudflare does use GTS</a> as a certificate authority as part of their universal SSL feature.</p>
 <p>While not definitive proof, both sites also use the same Google Tag Manager ID.</p>
 <p>
 <figure>
@@ -111,7 +111,7 @@ ns05.domaincontrol.com and ns06.domaincontrol.com). Both domains seem to solely 
 
 </p>
 <p>It is to note that the &ldquo;com&rdquo; domain is a resold domain. The original registration date is August 24th, 2000 (over 24 years ago). On or about November 30th, 2022, the domain was transferred to GoDaddy from Namecheap and had its NS changed from Sedo Parking to Cloudflare. This sale is further confirmed by <a href="https://domainnamewire.com/2022/11/29/turkey-week-end-user-domain-name-sales/">this article from DNW</a> talking about sales on the Sedo marketplace that took place that week. An <a href="https://web.archive.org/web/20211223025335/http://riverpoker.com/">archive</a> of the &ldquo;com&rdquo; site in December 2021 shows a Sedo landing page saying the site is for sale for the price of EUR$3,000.</p>
-<p>Looking further into domains linked in the footer of the site, the affiliate buttons lead to the www[.]chariv37[.]com (the &ldquo;Agent Backoffice&rdquo;) that is registered with GoDaddy and on the same Cloudflare NS as the main River Poker site. Among the many contact emails listed on the Agent site, they all share the same email domain www[.]rnying32[.]com. This domain currently is not registered, but, using historical WHOIS data, it was active between 2022 and 2023, registered using GoDaddy, and used Cloudflare NS.</p>
+<p>Looking further into domains linked in the footer of the site, the affiliate buttons lead to the www[.]chariv37[.]com (the &ldquo;Agent Backoffice [sic]&quot;) that is registered with GoDaddy and on the same Cloudflare NS as the main River Poker site. Among the many contact emails listed on the Agent site, they all share the same email domain www[.]rnying32[.]com. This domain currently is not registered, but, using historical WHOIS data, it was active between 2022 and 2023, registered using GoDaddy, and used Cloudflare NS.</p>
 <p>
 <figure>
   <img src="./images/Maltego%20Graph%203.jpg" alt="[Maltego Graph 3.jpg]" />
@@ -147,7 +147,7 @@ ns05.domaincontrol.com and ns06.domaincontrol.com). Both domains seem to solely 
 <li>Domain: www[.]riverpop77[.]com</li>
 </ul>
 <p>The www[.]riverpop77[.]com domain was registered with GoDaddy and active between 2019 and 2020. It seems that there are no working archives of the site.</p>
-<p>The @riverpoker Telegram handle seems to lead to an unrelated poker/gambling Telegram channel, presently. It is possible this might was a mistake at the time of the archive, as the text content of the site said &ldquo;Twitter,&rdquo; but linked to a Telegram. Searching Telegram for &ldquo;River Poker&rdquo; leads to a channel with the username @RiverPoker_com that has been actively posting about River Poker since 2016 utilizing the same logo as they do now; new posts in the channel link to the &ldquo;com&rdquo; site.</p>
+<p>The @riverpoker Telegram handle seems to lead to an unrelated poker/gambling Telegram channel, presently. It is possible this might have been a mistake at the time of the archive, as the text content of the site said &ldquo;Twitter,&rdquo; but linked to a Telegram. Searching Telegram for &ldquo;River Poker&rdquo; leads to a channel with the username @RiverPoker_com that has been actively posting about River Poker since 2016 utilizing the same logo as they do now; new posts in the channel link to the &ldquo;com&rdquo; site.</p>
 <h3 id="analyzing-eight-years-of-telegram-messages">Analyzing Eight Years of Telegram Messages</h3>
 <p>Using <a href="https://github.com/vile/telegram-from-json-to-url">this Python project</a>, it becomes very easy to filter the large Telegram chat export from River Poker&rsquo;s channel (consisting of over 14,000 messages over the past 8 years) for URLs that might be of interest. With some simple filtering built into the script (excluding a few social media sites and removing exact duplicate URLs), the number of unique URLs comes down to 53.</p>
 <p>Manual analysis of these domains to ensure they are related to River Poker yields 22 that were, with a 100% confidence, used to promote and/or access River Poker at some point in time. In addition to this, one domain is unclear if it was actively used by River Poker (or an affiliate), as there is no live or archived content of it.</p>
