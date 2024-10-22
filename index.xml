@@ -6,7 +6,16 @@
     <description>Recent content on Investigations by 0xFantasy</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 06 Oct 2024 20:31:24 -0400</lastBuildDate><atom:link href="http://blog.fa.nta.sy/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 20 Oct 2024 21:45:39 -0400</lastBuildDate><atom:link href="http://blog.fa.nta.sy/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How to Actually Secure Your X Account</title>
+      <link>http://blog.fa.nta.sy/posts/2024-10-20-how-to-actually-secure-your-x-account/</link>
+      <pubDate>Sun, 20 Oct 2024 21:45:39 -0400</pubDate>
+      
+      <guid>http://blog.fa.nta.sy/posts/2024-10-20-how-to-actually-secure-your-x-account/</guid>
+      <description>There has been a large increase in X account compromises over the past few months. As such, I wanted to compile a list of security policies and tips as well as common phishing tactics.</description>
+    </item>
+    
     <item>
       <title>Investigating Hackers&#39;, Exploiters&#39; Favorite Instant Crypto Exchange</title>
       <link>http://blog.fa.nta.sy/posts/2024-10-06-exch-cx-investigation/</link>
