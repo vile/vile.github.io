@@ -1,17 +1,24 @@
 <!DOCTYPE html>
 <html lang="en-us">
 <head>
-	<meta property="og:title" content="Investigating Hackers&#39;, Exploiters&#39; Favorite Instant Crypto Exchange" />
-<meta property="og:description" content="If you&rsquo;ve done any reading or sleuthing regarding the movements of funds after hacks, you&rsquo;ve probably encountered eXchCX before. Incidents including but not limited to&hellip;" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="http://blog.fa.nta.sy/posts/2024-10-06-exch-cx-investigation/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2024-10-06T20:31:24-04:00" />
-<meta property="article:modified_time" content="2024-10-06T20:31:24-04:00" /><meta property="og:site_name" content="Investigations by 0xFantasy" />
+	<meta property="og:url" content="http://blog.fa.nta.sy/posts/2024-10-06-exch-cx-investigation/">
+  <meta property="og:site_name" content="Investigations by 0xFantasy">
+  <meta property="og:title" content="Investigating Hackers&#39;, Exploiters&#39; Favorite Instant Crypto Exchange">
+  <meta property="og:description" content="If you’ve done any reading or sleuthing regarding the movements of funds after hacks, you’ve probably encountered eXchCX before. Incidents including but not limited to…">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2024-10-06T20:31:24-04:00">
+    <meta property="article:modified_time" content="2024-10-06T20:31:24-04:00">
+    <meta property="article:tag" content="Default">
+    <meta property="article:tag" content="Osint">
+    <meta property="article:tag" content="Crypto">
+    <meta property="article:tag" content="Vasp">
 
-
-	<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Investigating Hackers&#39;, Exploiters&#39; Favorite Instant Crypto Exchange"/>
-<meta name="twitter:description" content="If you&rsquo;ve done any reading or sleuthing regarding the movements of funds after hacks, you&rsquo;ve probably encountered eXchCX before. Incidents including but not limited to&hellip;"/>
+	
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Investigating Hackers&#39;, Exploiters&#39; Favorite Instant Crypto Exchange">
+  <meta name="twitter:description" content="If you’ve done any reading or sleuthing regarding the movements of funds after hacks, you’ve probably encountered eXchCX before. Incidents including but not limited to…">
 
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -27,7 +34,7 @@
 <body>
 	<header>
 	=================================<br>
-	== <a href="http://blog.fa.nta.sy">Investigations by 0xFantasy</a> ==<br>
+	== <a href="http://blog.fa.nta.sy/">Investigations by 0xFantasy</a> ==<br>
 	=================================
 	<div style="float: right;"></div><br>
 	<p>
@@ -63,8 +70,7 @@
 </a>
 
 <blockquote>
-<h3 id="thank-you-blocksechttpsxcomblocksecteam-for-allowing-me-access-to-their-metasleuthhttpsxcommetasleuth-platform-to-conduct-the-on-chain-portion-of-this-report-look-into-using-metasleuthhttpsmetasleuthio-for-your-next-investigation">Thank you <a href="https://x.com/BlockSecTeam">Blocksec</a> for allowing me access to their <a href="https://x.com/MetaSleuth">Metasleuth</a> platform to conduct the on-chain portion of this report. Look into using <a href="https://metasleuth.io/">Metasleuth</a> for your next investigation</h3>
-</blockquote>
+<h3 id="thank-you-blocksec-for-allowing-me-access-to-their-metasleuth-platform-to-conduct-the-on-chain-portion-of-this-report-look-into-using-metasleuth-for-your-next-investigation">Thank you <a href="https://x.com/BlockSecTeam">Blocksec</a> for allowing me access to their <a href="https://x.com/MetaSleuth">Metasleuth</a> platform to conduct the on-chain portion of this report. Look into using <a href="https://metasleuth.io/">Metasleuth</a> for your next investigation</h3></blockquote>
 <h2 id="context">Context</h2>
 <p>If you&rsquo;ve done any reading or sleuthing regarding the movements of funds after hacks, you&rsquo;ve probably encountered eXch[.]cx before (incidents including but not limited to: <a href="https://www.linkedin.com/pulse/attackers-using-exchcx-launder-money-series-recent-hacks-ffjze/">the DPRK a/k/a Lazarus</a>, <a href="https://www.binance.com/en/square/post/428465">Monkey Drainer</a>, <a href="https://x.com/MistTrack_io/status/1828612983901299055">Inferno Drainer</a>, <a href="https://x.com/MistTrack_io/status/1785061811106021712">Pink Drainer</a>, <a href="https://x.com/bax1337/status/1804895980644364337">Mark Cuban stolen funds</a>, <a href="https://x.com/MistTrack_io/status/1834185964585164858">the Lykke exploiter</a>, <a href="https://x.com/tayvano_/status/1743789297877262642">Mango Farm&rsquo;s exit scam</a>, <a href="https://x.com/Rarma_/status/1818813592214684037">Terra IBC exploiter (Astroport token)</a>, <a href="https://x.com/GlobalLedger/status/1760641171288740300">the FixedFloat exploiter</a>, <a href="https://x.com/MOKSHA_256/status/1774146600559837532">various phishing customers</a>, <a href="https://x.com/zachxbt/status/1758542426128679172">CEX fraud</a>, and many, many more). But, where exactly did this infamous hardline no-KYC exchange come from?</p>
 <h2 id="exchs-2014-origins">Exch&rsquo;s 2014 Origins</h2>
@@ -185,6 +191,8 @@
 		<div>
 			<ul>
 				
+				<li><a href="/posts/2025-08-01-weaponizing-unity-packages/">Weaponizing Unity Packages for Malware Delivery</a></li>
+				
 				<li><a href="/posts/2024-10-20-how-to-actually-secure-your-x-account/">How to Actually Secure Your X Account</a></li>
 				
 				<li><a href="/posts/2024-10-06-exch-cx-investigation/">Investigating Hackers&#39;, Exploiters&#39; Favorite Instant Crypto Exchange</a></li>
@@ -200,7 +208,7 @@
 
 
 	<footer>
-	<p>&copy; 2024 <a href="http://blog.fa.nta.sy"><b>Investigations by 0xFantasy</b></a>.
+	<p>&copy; 2025 <a href="http://blog.fa.nta.sy/"><b>Investigations by 0xFantasy</b></a>.
 	</p>
 </footer>
 

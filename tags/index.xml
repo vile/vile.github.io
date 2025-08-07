@@ -4,71 +4,65 @@
     <title>Tags on Investigations by 0xFantasy</title>
     <link>http://blog.fa.nta.sy/tags/</link>
     <description>Recent content in Tags on Investigations by 0xFantasy</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 20 Oct 2024 21:45:39 -0400</lastBuildDate><atom:link href="http://blog.fa.nta.sy/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 01 Aug 2025 18:08:54 -0400</lastBuildDate>
+    <atom:link href="http://blog.fa.nta.sy/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>default</title>
+      <title>Default</title>
       <link>http://blog.fa.nta.sy/tags/default/</link>
-      <pubDate>Sun, 20 Oct 2024 21:45:39 -0400</pubDate>
-      
+      <pubDate>Fri, 01 Aug 2025 18:08:54 -0400</pubDate>
       <guid>http://blog.fa.nta.sy/tags/default/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>socialmedia</title>
+      <title>Malware</title>
+      <link>http://blog.fa.nta.sy/tags/malware/</link>
+      <pubDate>Fri, 01 Aug 2025 18:08:54 -0400</pubDate>
+      <guid>http://blog.fa.nta.sy/tags/malware/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Socialmedia</title>
       <link>http://blog.fa.nta.sy/tags/socialmedia/</link>
       <pubDate>Sun, 20 Oct 2024 21:45:39 -0400</pubDate>
-      
       <guid>http://blog.fa.nta.sy/tags/socialmedia/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>crypto</title>
+      <title>Crypto</title>
       <link>http://blog.fa.nta.sy/tags/crypto/</link>
       <pubDate>Sun, 06 Oct 2024 20:31:24 -0400</pubDate>
-      
       <guid>http://blog.fa.nta.sy/tags/crypto/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>osint</title>
+      <title>Osint</title>
       <link>http://blog.fa.nta.sy/tags/osint/</link>
       <pubDate>Sun, 06 Oct 2024 20:31:24 -0400</pubDate>
-      
       <guid>http://blog.fa.nta.sy/tags/osint/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>vasp</title>
+      <title>Vasp</title>
       <link>http://blog.fa.nta.sy/tags/vasp/</link>
       <pubDate>Sun, 06 Oct 2024 20:31:24 -0400</pubDate>
-      
       <guid>http://blog.fa.nta.sy/tags/vasp/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>gambling</title>
+      <title>Gambling</title>
       <link>http://blog.fa.nta.sy/tags/gambling/</link>
       <pubDate>Wed, 18 Sep 2024 15:25:11 -0400</pubDate>
-      
       <guid>http://blog.fa.nta.sy/tags/gambling/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>terrorism</title>
+      <title>Terrorism</title>
       <link>http://blog.fa.nta.sy/tags/terrorism/</link>
       <pubDate>Tue, 17 Sep 2024 21:27:38 -0400</pubDate>
-      
       <guid>http://blog.fa.nta.sy/tags/terrorism/</guid>
       <description></description>
     </item>
-    
   </channel>
 </rss>

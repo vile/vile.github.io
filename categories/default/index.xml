@@ -1,47 +1,47 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>default on Investigations by 0xFantasy</title>
+    <title>Default on Investigations by 0xFantasy</title>
     <link>http://blog.fa.nta.sy/categories/default/</link>
-    <description>Recent content in default on Investigations by 0xFantasy</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Default on Investigations by 0xFantasy</description>
+    <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 20 Oct 2024 21:45:39 -0400</lastBuildDate><atom:link href="http://blog.fa.nta.sy/categories/default/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 01 Aug 2025 18:08:54 -0400</lastBuildDate>
+    <atom:link href="http://blog.fa.nta.sy/categories/default/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Weaponizing Unity Packages for Malware Delivery</title>
+      <link>http://blog.fa.nta.sy/posts/2025-08-01-weaponizing-unity-packages/</link>
+      <pubDate>Fri, 01 Aug 2025 18:08:54 -0400</pubDate>
+      <guid>http://blog.fa.nta.sy/posts/2025-08-01-weaponizing-unity-packages/</guid>
+      <description>I was recently talking to a handful of online friends about UGC (user generated content) creation within the Unity ecosystem. One of them jokingly mentioned how someone they knew was &amp;ldquo;ratted&amp;rdquo; by downloading an asset, that is usually behind a paywall, for free. Ratted from a Unity package?</description>
+    </item>
     <item>
       <title>How to Actually Secure Your X Account</title>
       <link>http://blog.fa.nta.sy/posts/2024-10-20-how-to-actually-secure-your-x-account/</link>
       <pubDate>Sun, 20 Oct 2024 21:45:39 -0400</pubDate>
-      
       <guid>http://blog.fa.nta.sy/posts/2024-10-20-how-to-actually-secure-your-x-account/</guid>
       <description>There has been a large increase in X account compromises over the past few months. As such, I wanted to compile a list of security policies and tips as well as common phishing tactics.</description>
     </item>
-    
     <item>
       <title>Investigating Hackers&#39;, Exploiters&#39; Favorite Instant Crypto Exchange</title>
       <link>http://blog.fa.nta.sy/posts/2024-10-06-exch-cx-investigation/</link>
       <pubDate>Sun, 06 Oct 2024 20:31:24 -0400</pubDate>
-      
       <guid>http://blog.fa.nta.sy/posts/2024-10-06-exch-cx-investigation/</guid>
       <description>If you&amp;rsquo;ve done any reading or sleuthing regarding the movements of funds after hacks, you&amp;rsquo;ve probably encountered eXchCX before. Incidents including but not limited to&amp;hellip;</description>
     </item>
-    
     <item>
       <title>River Poker Casino Investigation</title>
       <link>http://blog.fa.nta.sy/posts/2024-09-18-river-poker-casino-investigation/</link>
       <pubDate>Wed, 18 Sep 2024 15:25:11 -0400</pubDate>
-      
       <guid>http://blog.fa.nta.sy/posts/2024-09-18-river-poker-casino-investigation/</guid>
       <description>This is one of two articles based on &amp;quot;prompted&amp;quot; investigations. Starting out with an initial question and/or piece of media, the investigation is still open ended.</description>
     </item>
-    
     <item>
       <title>Mujahideen Brigade Investigation</title>
       <link>http://blog.fa.nta.sy/posts/2024-09-17-mujahideen-brigade-investigation/</link>
       <pubDate>Tue, 17 Sep 2024 21:27:38 -0400</pubDate>
-      
       <guid>http://blog.fa.nta.sy/posts/2024-09-17-mujahideen-brigade-investigation/</guid>
       <description>This is one of two articles based on &amp;ldquo;prompted&amp;rdquo; investigations. Starting out with an initial question and/or piece of media, the investigation is still open ended.</description>
     </item>
-    
   </channel>
 </rss>

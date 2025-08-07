@@ -1,17 +1,25 @@
 <!DOCTYPE html>
 <html lang="en-us">
 <head>
-	<meta property="og:title" content="River Poker Casino Investigation" />
-<meta property="og:description" content="This is one of two articles based on &quot;prompted&quot; investigations. Starting out with an initial question and/or piece of media, the investigation is still open ended." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="http://blog.fa.nta.sy/posts/2024-09-18-river-poker-casino-investigation/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2024-09-18T15:25:11-04:00" />
-<meta property="article:modified_time" content="2024-09-18T15:25:11-04:00" /><meta property="og:site_name" content="Investigations by 0xFantasy" />
+	<meta property="og:url" content="http://blog.fa.nta.sy/posts/2024-09-18-river-poker-casino-investigation/">
+  <meta property="og:site_name" content="Investigations by 0xFantasy">
+  <meta property="og:title" content="River Poker Casino Investigation">
+  <meta property="og:description" content="This is one of two articles based on &#34;prompted&#34; investigations. Starting out with an initial question and/or piece of media, the investigation is still open ended.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2024-09-18T15:25:11-04:00">
+    <meta property="article:modified_time" content="2024-09-18T15:25:11-04:00">
+    <meta property="article:tag" content="Default">
+    <meta property="article:tag" content="Osint">
+    <meta property="article:tag" content="Crypto">
+    <meta property="article:tag" content="Gambling">
+    <meta property="article:tag" content="Vasp">
 
-
-	<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="River Poker Casino Investigation"/>
-<meta name="twitter:description" content="This is one of two articles based on &quot;prompted&quot; investigations. Starting out with an initial question and/or piece of media, the investigation is still open ended."/>
+	
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="River Poker Casino Investigation">
+  <meta name="twitter:description" content="This is one of two articles based on &#34;prompted&#34; investigations. Starting out with an initial question and/or piece of media, the investigation is still open ended.">
 
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -27,7 +35,7 @@
 <body>
 	<header>
 	=================================<br>
-	== <a href="http://blog.fa.nta.sy">Investigations by 0xFantasy</a> ==<br>
+	== <a href="http://blog.fa.nta.sy/">Investigations by 0xFantasy</a> ==<br>
 	=================================
 	<div style="float: right;"></div><br>
 	<p>
@@ -65,8 +73,7 @@
 </a>
 
 <blockquote>
-<h3 id="thank-you-blocksechttpsxcomblocksecteam-for-allowing-me-access-to-their-metasleuthhttpsxcommetasleuth-platform-to-conduct-the-on-chain-portion-of-this-report-look-into-using-metasleuthhttpsmetasleuthio-for-your-next-investigation">Thank you <a href="https://x.com/BlockSecTeam">Blocksec</a> for allowing me access to their <a href="https://x.com/MetaSleuth">Metasleuth</a> platform to conduct the on-chain portion of this report. Look into using <a href="https://metasleuth.io/">Metasleuth</a> for your next investigation</h3>
-</blockquote>
+<h3 id="thank-you-blocksec-for-allowing-me-access-to-their-metasleuth-platform-to-conduct-the-on-chain-portion-of-this-report-look-into-using-metasleuth-for-your-next-investigation">Thank you <a href="https://x.com/BlockSecTeam">Blocksec</a> for allowing me access to their <a href="https://x.com/MetaSleuth">Metasleuth</a> platform to conduct the on-chain portion of this report. Look into using <a href="https://metasleuth.io/">Metasleuth</a> for your next investigation</h3></blockquote>
 <h2 id="preface">Preface</h2>
 <p>This is the second of two articles based on “prompted” investigations. Starting out with an initial question and/or piece of media, the investigation is still open ended.</p>
 <p>Initial Prompt:</p>
@@ -86,7 +93,7 @@
 
 
 </p>
-<p>Looking into both the source of the sites as well as DNS and WHOIS data, we can further increase our confidence these domains belong to the same entity. Both domains' currently are registered with GoDaddy, use WHOIS privacy services, and use Cloudflare name servers (NS).</p>
+<p>Looking into both the source of the sites as well as DNS and WHOIS data, we can further increase our confidence these domains belong to the same entity. Both domains&rsquo; currently are registered with GoDaddy, use WHOIS privacy services, and use Cloudflare name servers (NS).</p>
 <p>DNS-wise, both domains have American &ldquo;A&rdquo; record IPs that are owned by Cloudflare (ASN: AS13335), and use Google-based mail servers (MX). It is to note that the &ldquo;com&rdquo; domain contains slightly more DNS records include: an additional &ldquo;A&rdquo; record (belonging to Cloudflare), and two &ldquo;TXT&rdquo; records (Google verifications). The &ldquo;info&rdquo; domain contains two extra &ldquo;MX&rdquo; records (main[.]riverpoker[.]info; they likely attempted to run their own mail server at one point; and a Google verification MX URL).</p>
 <p>
 <figure>
@@ -136,7 +143,7 @@ ns05.domaincontrol.com and ns06.domaincontrol.com). Both domains seem to solely 
 
 </p>
 <p>It is to note that the &ldquo;com&rdquo; domain is a resold domain. The original registration date is August 24th, 2000 (over 24 years ago). On or about November 30th, 2022, the domain was transferred to GoDaddy from Namecheap and had its NS changed from Sedo Parking to Cloudflare. This sale is further confirmed by <a href="https://domainnamewire.com/2022/11/29/turkey-week-end-user-domain-name-sales/">this article from DNW</a> talking about sales on the Sedo marketplace that took place that week. An <a href="https://web.archive.org/web/20211223025335/http://riverpoker.com/">archive</a> of the &ldquo;com&rdquo; site in December 2021 shows a Sedo landing page saying the site is for sale for the price of EUR$3,000.</p>
-<p>Looking further into domains linked in the footer of the site, the affiliate buttons lead to the www[.]chariv37[.]com (the &ldquo;Agent Backoffice [sic]&quot;) that is registered with GoDaddy and on the same Cloudflare NS as the main River Poker site. Among the many contact emails listed on the Agent site, they all share the same email domain www[.]rnying32[.]com. This domain currently is not registered, but, using historical WHOIS data, it was active between 2022 and 2023, registered using GoDaddy, and used Cloudflare NS.</p>
+<p>Looking further into domains linked in the footer of the site, the affiliate buttons lead to the www[.]chariv37[.]com (the &ldquo;Agent Backoffice [sic]&rdquo;) that is registered with GoDaddy and on the same Cloudflare NS as the main River Poker site. Among the many contact emails listed on the Agent site, they all share the same email domain www[.]rnying32[.]com. This domain currently is not registered, but, using historical WHOIS data, it was active between 2022 and 2023, registered using GoDaddy, and used Cloudflare NS.</p>
 <p>
 <figure>
   <img src="./images/Maltego%20Graph%203.jpg" alt="[Maltego Graph 3.jpg]" />
@@ -369,6 +376,8 @@ ns05.domaincontrol.com and ns06.domaincontrol.com). Both domains seem to solely 
 		<div>
 			<ul>
 				
+				<li><a href="/posts/2025-08-01-weaponizing-unity-packages/">Weaponizing Unity Packages for Malware Delivery</a></li>
+				
 				<li><a href="/posts/2024-10-20-how-to-actually-secure-your-x-account/">How to Actually Secure Your X Account</a></li>
 				
 				<li><a href="/posts/2024-10-06-exch-cx-investigation/">Investigating Hackers&#39;, Exploiters&#39; Favorite Instant Crypto Exchange</a></li>
@@ -384,7 +393,7 @@ ns05.domaincontrol.com and ns06.domaincontrol.com). Both domains seem to solely 
 
 
 	<footer>
-	<p>&copy; 2024 <a href="http://blog.fa.nta.sy"><b>Investigations by 0xFantasy</b></a>.
+	<p>&copy; 2025 <a href="http://blog.fa.nta.sy/"><b>Investigations by 0xFantasy</b></a>.
 	</p>
 </footer>
 
