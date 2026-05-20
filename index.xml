@@ -6,8 +6,15 @@
     <description>Recent content on Investigations by 0xFantasy</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 13 Apr 2026 16:05:35 -0400</lastBuildDate>
+    <lastBuildDate>Wed, 20 May 2026 11:16:29 -0400</lastBuildDate>
     <atom:link href="http://blog.fa.nta.sy/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Trump Mobile: God Mode API Endpoint, Plaintext Passwords, and Mobile Device Identifiers</title>
+      <link>http://blog.fa.nta.sy/posts/2026-05-20-trump-mobile-god-mode/</link>
+      <pubDate>Wed, 20 May 2026 11:16:29 -0400</pubDate>
+      <guid>http://blog.fa.nta.sy/posts/2026-05-20-trump-mobile-god-mode/</guid>
+      <description>For an indeterminate amount of time, the Trump Mobile API had at least two unprotected endpoints that could be exploited for either a) mass general info disclosure or b) targeted and enumerable info disclosure including plain text passwords; full PII including name, address, and email; and unique mobile device identifiers inlcuding IMEI and ICCID.</description>
+    </item>
     <item>
       <title>No, your phishing kit does not have a Cloudflare bypass</title>
       <link>http://blog.fa.nta.sy/posts/2026-04-13-not-a-cloudflare-bypass/</link>
