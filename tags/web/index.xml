@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Web on Investigations by 0xFantasy</title>
+    <link>http://blog.fa.nta.sy/tags/web/</link>
+    <description>Recent content in Web on Investigations by 0xFantasy</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 13 Apr 2026 16:05:35 -0400</lastBuildDate>
+    <atom:link href="http://blog.fa.nta.sy/tags/web/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>No, your phishing kit does not have a Cloudflare bypass</title>
+      <link>http://blog.fa.nta.sy/posts/2026-04-13-not-a-cloudflare-bypass/</link>
+      <pubDate>Mon, 13 Apr 2026 16:05:35 -0400</pubDate>
+      <guid>http://blog.fa.nta.sy/posts/2026-04-13-not-a-cloudflare-bypass/</guid>
+      <description>Through my daily work and from reading quite a few blog posts, researchers consistently mistake that a phishing kit is leveraging /cdn-cgi/phish-bypass to hinder web and security scanners. This stems from a misunderstanding of what the Cloudflare /cdn-cgi/ endpoint is and how it operates.</description>
+    </item>
+  </channel>
+</rss>

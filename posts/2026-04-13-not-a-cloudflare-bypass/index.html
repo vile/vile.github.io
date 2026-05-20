@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+	
+	
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C2KWQMHPS9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-C2KWQMHPS9');
+</script>
+	
+	<meta property="og:url" content="http://blog.fa.nta.sy/posts/2026-04-13-not-a-cloudflare-bypass/">
+  <meta property="og:site_name" content="Investigations by 0xFantasy">
+  <meta property="og:title" content="No, your phishing kit does not have a Cloudflare bypass">
+  <meta property="og:description" content="Through my daily work and from reading quite a few blog posts, researchers consistently mistake that a phishing kit is leveraging /cdn-cgi/phish-bypass to hinder web and security scanners. This stems from a misunderstanding of what the Cloudflare /cdn-cgi/ endpoint is and how it operates.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2026-04-13T16:05:35-04:00">
+    <meta property="article:modified_time" content="2026-04-13T16:05:35-04:00">
+    <meta property="article:tag" content="Default">
+    <meta property="article:tag" content="Web">
+    <meta property="article:tag" content="Phishing">
+
+	
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="No, your phishing kit does not have a Cloudflare bypass">
+  <meta name="twitter:description" content="Through my daily work and from reading quite a few blog posts, researchers consistently mistake that a phishing kit is leveraging /cdn-cgi/phish-bypass to hinder web and security scanners. This stems from a misunderstanding of what the Cloudflare /cdn-cgi/ endpoint is and how it operates.">
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<style type=text/css>body{font-family:monospace;}</style>
+	<title>No, your phishing kit does not have a Cloudflare bypass</title>
+	
+	
+	<link rel="stylesheet" href="/css/style.css">
+	
+	
+</head>
+<body>
+	<header>
+	=================================<br>
+	== <a href="http://blog.fa.nta.sy/">Investigations by 0xFantasy</a> ==<br>
+	=================================
+	<div style="float: right;"></div><br>
+	<p>
+	<nav>
+			<a href="/"><b>Start</b></a>.
+			
+</header>
+
+	
+	<main>
+		<article>
+			<h1>No, your phishing kit does not have a Cloudflare bypass</h1>
+			<b><time>2026-04-13 16:05:35</time></b>
+		       
+		           <a href="/tags/default">default</a>
+        	       
+		           <a href="/tags/web">web</a>
+        	       
+		           <a href="/tags/phishing">phishing</a>
+        	       
+
+			<div>
+				<p>Through my daily work and from reading quite a few blog posts, researchers consistently mistake that a phishing kit is leveraging <code>/cdn-cgi/phish-bypass</code> to hinder web and security scanners.
+This stems from a misunderstanding of what the Cloudflare /cdn-cgi/ endpoint is and how it operates.</p>
+<h2 id="what-is-the-cdn-cgi-endpoint">What is the /cdn-cgi/ endpoint?</h2>
+<p>When a site uses Cloudflare as a reverse proxy and DNS provider, the <code>/cdn-cgi/</code> endpoint is automatically added and hosted on the domain by Cloudflare.
+This path is exclusively managed and served directly by Cloudflare and &ldquo;[i]t cannot be modified or customized.&rdquo; [<a href="https://developers.cloudflare.com/fundamentals/reference/cdn-cgi-endpoint/">1</a>]</p>
+<p>This endpoint is the base for the majority of Cloudflare products, such as challenge (turnstile), image optimization, web analytics, email obfuscation, etc.
+This endpoint is also used for <code>phish-bypass</code>.</p>
+<h2 id="cloudflare-phishing-warning">Cloudflare Phishing Warning</h2>
+<p>Similar to Google Safe Browsing or Microsoft SmartScreen for Edge, Cloudflare maintains a curated list of phishing domains that leverage Cloudflare infrastructure.
+These sites display a prominent warning before entering stating that the content is potentially malicious.
+Passing this warning requires a manual acknowledgement.</p>
+
+
+<img src="https://global.discourse-cdn.com/cloudflare/original/3X/6/f/6f3592a6d02734f0ace78cff0490d0da0bd623c5.png" alt="Screenshot of Cloudflare phishing warning screen"/>
+
+
+<h2 id="technical-details-of-the-cloudflare-phishing-warning">Technical Details of the Cloudflare Phishing Warning</h2>
+<p>Under the hood, there are quite a few steps that must succeed before a manual acknowledgement is accepted for the phishing warning.
+First, a turnstile challenge must be completed, either in the background or via manual &ldquo;click&rdquo; challenge.
+Once this challenge is completed and the &ldquo;Ignore &amp; Proceed&rdquo; button is pressed, a <code>GET</code> request is sent to <code>domain.com/cdn-cgi/phish-bypass</code> which includes an <code>atok</code> (a CSRF-like token) and the turnstile challenge response.
+If the challenge response is accepted, this endpoint then returns an HTTP 301 response including two critical components: <code>Location</code> and <code>Set-cookie</code> for an HTTP cookie <code>__cf_mw_byp</code> (assumed to mean &ldquo;Cloudflare Malware Bypass&rdquo;).
+The <code>Location</code> redirects to the originally requested content (in case the phishing warning modified the URL path) and the <code>__cf_mw_byp</code> cookie allows for continuous browsing of the site without having to re-acknowledge the phishing warning.</p>
+<p>It is extremely common for security scanners to get stuck on the &ldquo;turnstile token missing&rdquo; error because it is easy to grab the <code>atok</code> token, but is difficult to solve the turnstile challenge (see <a href="https://urlscan.io/search/#page.url%3A%22cdn-cgi%2Fphish-bypass%22">URLScan for example</a>).
+Both components are required to successfully view content behind the warning page.</p>
+<p>This behavior also confuses human researchers.
+An <a href="https://unit42.paloaltonetworks.com/iranian-cyberattacks-2026/">article from Palo Alto&rsquo;s Unit42</a> (<a href="https://archive.ph/8aVHf">archive</a>) incorrectly states that &ldquo;&hellip;attackers [are] using the cdn-cgi/phish-bypass&hellip; to exploit and circumvent security challenges.&rdquo;
+While it technically does defeat security scanners who are not able to complete the turnstile challenge, the site is already marked as phishing for every visitor.</p>
+
+			</div>
+		</article>
+	</main>
+<aside>
+	<div>
+		<div>
+			<h3>LATEST POSTS</h3>
+		</div>
+		<div>
+			<ul>
+				
+				<li><a href="/posts/2026-04-13-not-a-cloudflare-bypass/">No, your phishing kit does not have a Cloudflare bypass</a></li>
+				
+				<li><a href="/posts/2026-01-19-astral-uv-python-malware-loader/">Next-Gen Python Malware: Leveraging Astral&#39;s UV as a One-Shot Loader</a></li>
+				
+				<li><a href="/posts/2026-01-01-telegraph-malware-scams-leaked-gov-docs/">Telegra.ph: Malware, Scams, and Leaked Government Docs (Kinda)</a></li>
+				
+				<li><a href="/posts/2025-08-01-weaponizing-unity-packages/">Weaponizing Unity Packages for Malware Delivery</a></li>
+				
+				<li><a href="/posts/2024-10-20-how-to-actually-secure-your-x-account/">How to Actually Secure Your X Account</a></li>
+				
+			</ul>
+		</div>
+	</div>
+</aside>
+
+
+	<footer>
+	<p>&copy; 2026 <a href="http://blog.fa.nta.sy/"><b>Investigations by 0xFantasy</b></a>.
+	<a href="https://x.com/0xFantasy" target="_blank">X.com</a>.
+	<a href="https://github.com/Vile" target="_blank">Github</a>.
+	<a href="https://bsky.app/profile/fanta.sy" target="_blank">Bluesky</a>.
+	</p>
+</footer>
+
+</body>
+</html>
