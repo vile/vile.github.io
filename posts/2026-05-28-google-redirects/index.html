@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+	
+	
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C2KWQMHPS9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-C2KWQMHPS9');
+</script>
+	
+	<meta property="og:url" content="http://blog.fa.nta.sy/posts/2026-05-28-google-redirects/">
+	<meta property="og:site_name" content="Investigations by 0xFantasy">
+	<meta property="og:title" content="Google: You Get an Open Redirect! You Get an Open Redirect!">
+	<meta property="og:description" content="While not the most exhilarating topic, looking into Google’s open redirects was a fun evening.
+TLDR Google has a multitude of open redirects that are frequently abused by threat actors. They are used to both deter initial URL scanning and obfuscate the final phishing URL. A recent example of this in the wild found by KnowBe4 showcased combining multiple redirects in a row. Google seemingly has no interest in fixing these issues according to their VRP. These redirects span different Google domains and products including Search, Meet and Ads (formerly DoubleClick).">
+	<meta property="og:locale" content="en_us">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="posts">
+		<meta property="article:published_time" content="2026-05-28T19:34:33-04:00">
+		<meta property="article:modified_time" content="2026-05-28T19:34:33-04:00">
+		<meta property="article:tag" content="Default">
+
+	
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="Google: You Get an Open Redirect! You Get an Open Redirect!">
+	<meta name="twitter:description" content="While not the most exhilarating topic, looking into Google’s open redirects was a fun evening.
+TLDR Google has a multitude of open redirects that are frequently abused by threat actors. They are used to both deter initial URL scanning and obfuscate the final phishing URL. A recent example of this in the wild found by KnowBe4 showcased combining multiple redirects in a row. Google seemingly has no interest in fixing these issues according to their VRP. These redirects span different Google domains and products including Search, Meet and Ads (formerly DoubleClick).">
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<style type=text/css>body{font-family:monospace;}</style>
+	<title>Google: You Get an Open Redirect! You Get an Open Redirect!</title>
+	
+	
+	<link rel="stylesheet" href="/css/style.css">
+	
+	
+</head>
+<body>
+	<header>
+	=================================<br>
+	== <a href="http://blog.fa.nta.sy/">Investigations by 0xFantasy</a> ==<br>
+	=================================
+	<div style="float: right;"></div><br>
+	<p>
+	<nav>
+			<a href="/"><b>Start</b></a>.
+			
+</header>
+
+	
+	<main>
+		<article>
+			<h1>Google: You Get an Open Redirect! You Get an Open Redirect!</h1>
+			<b><time>2026-05-28 19:34:33</time></b>
+		       
+		           <a href="/tags/default">default</a>
+        	       
+
+			<div>
+				<p>While not the most exhilarating topic, looking into Google&rsquo;s open redirects was a fun evening.</p>
+<h2 id="tldr">TLDR</h2>
+<p>Google has a multitude of open redirects that are frequently abused by threat actors.
+They are used to both deter initial URL scanning and obfuscate the final phishing URL.
+A recent example of this in the wild found by KnowBe4 <a href="https://x.com/Kb4Threatlabs/status/2059277859148206363">showcased combining multiple redirects in a row</a>.
+Google seemingly has no interest in fixing these issues according to <a href="https://bughunters.google.com/learn/invalid-reports/web-platform/navigation/open-redirectors">their VRP</a>.
+These redirects span different Google domains and products including Search, Meet and Ads (formerly DoubleClick).</p>
+<h2 id="what-is-an-open-redirect">What is an Open Redirect?</h2>
+<p>Simply put an &ldquo;open redirect is an attack that occurs when a web application redirects users to a URL supplied via an unvalidated parameter&rdquo; (<a href="https://owasp.org/www-community/attacks/open_redirect">OWASP</a>).</p>
+<h2 id="classic-redirect-in-google-search">Classic Redirect in Google Search</h2>
+<p>Two extremely well-known redirects for the base <code>google.com</code> domain are <code>/url?q=</code> and <code>/amp/s/</code> (also just <code>/amp/</code>).
+The former accepts a protocol-prefixed URL (e.g., <code>https://blog.fa.nta.sy</code>) while the latter accepts a bare locator (e.g., <code>blog.fa.nta.sy</code>).
+This distinction is interesting since the <code>amp</code> path uses the <code>/url?q=</code> redirector underneath.
+Both redirects preserve target URL paths and query parameters, but not fragments.</p>
+<p>It is important to note that the <em>majority</em> of the time, a pop-up warning about the redirect shows the final target URL (even resolving through multiple layers of normal Google redirects; <a href="https://google.com/url?q=https://google.com/url?q=https://google.com/url?q=https://google.com/url?q=https://example.com">example</a>).
+This may be helpful or hurtful for a phishing campaign depending on the use case.
+For example, requiring a manual acknowledgement will stop simple web scanners, but may make users slightly wary of the destination.</p>
+<p>It is also interesting to note that the only other protocol allowed in <code>/url?q=</code> is <code>ftp</code>.
+All other protocol prefixes (including <code>ssh</code>, <code>ldap</code>, <code>smb</code>, <code>chrome</code>, <code>ms-appx</code>, etc.) all return a redirect warning stating &ldquo;invalid url.&rdquo;
+Not even <code>sftp://</code> works.
+The only exception is the <code>tel:</code> URI for phone numbers which embeds, in plain text, the actual phone number provided in addition to the &ldquo;invalid url&rdquo; warning (<a href="https://www.google.com/url?q=tel:1(555)-555-5555">example</a>).</p>
+<h2 id="google-meet-redirect">Google Meet Redirect</h2>
+<p>The new kid on the block is using Google Meet&rsquo;s <code>/linkredirect?dest=</code>.
+This redirect also ends up using <code>/url?q=</code> under the hood, but potentially has larger social engineering implications if
+someone blindly trusts the <code>meet.google.com</code> domain without paying attention to the remainder of the URL.
+This redirect also supports full URL encoding, compared to <code>/amp/</code>, allowing for minor obfuscation of the target URL.</p>
+<h2 id="surfing-on-google-ads">Surfing on Google Ads</h2>
+<p>Google Ads (previously DoubleClick) maintains significant infrastructure for URL redirection (kind of the whole point of ad tracking URLs).
+While many domains and endpoints seem to have protections against blindly changing the ad target URL, some very much don&rsquo;t.</p>
+<h3 id="doubleclick-domain-with-no-checks">DoubleClick Domain with No Checks</h3>
+<p>The only domain and path found during my testing that blindly accepts any URL with no authentication was <code>adclick.g.doubleclick.net/pcs/click?adurl=</code>
+and its slightly shorter domain cousin <code>ad.doubleclick.net</code>.
+Simply appending a protocol-prefixed URL after <code>adurl</code> results in a bare HTTP 302 redirect.
+No URL encoding is supported for this redirect.</p>
+<p>The downside of using DoubleClick domains is that they are frequently part of ad blocker blocklists (both client- and network-based), meaning that they may not
+work in certain environments.</p>
+<h3 id="paid-ad-surfing">Paid Ad Surfing</h3>
+<p>Three major domain and path combinations were identified that support piggybacking off existing <strong>live</strong> ads.
+These include <code>ad.doubleclick.net/ddm/clk/</code>, <code>ad.doubleclick.net/ddm/trackclk/...?</code>, and <code>googleads.g.doubleclick.net/dbm/clk?...&amp;adurl=</code>.</p>
+<p>The <code>/ddm/clk/</code> and <code>clk?...&amp;adurl=</code> ad paths are fairly common with modern Google Ads (site banners, etc.) and allow for simple hijacking.
+However, only <strong>live</strong> ads can be hijacked; once an ad becomes inactive, the URL returns an HTTP 404.
+This, too, can be helpful or hurtful: if an ad expires before a novice analyst views it, they may think the phishing URL is down, instead of the ad link that is being piggybacked on.</p>
+<p>The <code>/ddm/clk/</code> path, however, is unique in that almost any regional Google domain under the <code>adservice</code> subdomain (e.g., adservice.google.info, adservice.google.co.kr, adservice.google.fr, etc.) can be substituted.
+This can allow for a unique trust-building technique for phishing campaigns that may be targeting a specific country by using their native Google domain instead of a DoubleClick domain.</p>
+<p>The <code>/ddm/clk/</code> path does not support URL encoding, but <code>clk?...&amp;adurl=</code> does.</p>
+<p>The <code>ddm/trackclk/...?</code> path is also unique as it is primarily used for long-lasting ad campaigns compared to the short-lived <code>/ddm/clk/</code> ad URLs.
+These URLs are some of the simplest to hijack, simply by removing any existing query parameters and appending the target URL (e.g., <a href="http://ad.doubleclick.net/ddm/trackclk/N1153793.2061500TWITTER-OFFICIAL/B35446380.442289925;dc_trk_aid=635650078;dc_trk_cid=252361683?https%3A%2F%2Fblog%2Efa%2Enta%2Esy">ad.doubleclick.net/ddm/trackclk/&hellip;/&hellip;?https://blog.fa.nta.sy</a>).
+In addition, this type of ad URL dynamically appends the original ad campaign ID to the target location, meaning that it can be used to check if a visitor actually came from the ad URL instead of directly visiting the site.
+However, no alternative domains seem to be supported and URL encoding is not supported.</p>
+
+			</div>
+		</article>
+	</main>
+<aside>
+	<div>
+		<div>
+			<h3>LATEST POSTS</h3>
+		</div>
+		<div>
+			<ul>
+				
+				<li><a href="/posts/2026-05-28-google-redirects/">Google: You Get an Open Redirect! You Get an Open Redirect!</a></li>
+				
+				<li><a href="/posts/2026-05-20-trump-mobile-god-mode/">Trump Mobile: God Mode API Endpoint, Plaintext Passwords, and Mobile Device Identifiers</a></li>
+				
+				<li><a href="/posts/2026-04-13-not-a-cloudflare-bypass/">No, your phishing kit does not have a Cloudflare bypass</a></li>
+				
+				<li><a href="/posts/2026-01-19-astral-uv-python-malware-loader/">Next-Gen Python Malware: Leveraging Astral&#39;s UV as a One-Shot Loader</a></li>
+				
+				<li><a href="/posts/2026-01-01-telegraph-malware-scams-leaked-gov-docs/">Telegra.ph: Malware, Scams, and Leaked Government Docs (Kinda)</a></li>
+				
+			</ul>
+		</div>
+	</div>
+</aside>
+
+
+	<footer>
+	<p>&copy; 2026 <a href="http://blog.fa.nta.sy/"><b>Investigations by 0xFantasy</b></a>.
+	<a href="https://x.com/0xFantasy" target="_blank">X.com</a>.
+	<a href="https://github.com/Vile" target="_blank">Github</a>.
+	<a href="https://bsky.app/profile/fanta.sy" target="_blank">Bluesky</a>.
+	</p>
+</footer>
+
+</body>
+</html>
