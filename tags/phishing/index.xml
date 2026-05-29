@@ -10,9 +10,16 @@
 		
 		
 		
-			<lastBuildDate>Mon, 13 Apr 2026 16:05:35 -0400</lastBuildDate>
+			<lastBuildDate>Thu, 28 May 2026 19:34:33 -0400</lastBuildDate>
 		
 			<atom:link href="http://blog.fa.nta.sy/tags/phishing/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Google: You Get an Open Redirect! You Get an Open Redirect!</title>
+				<link>http://blog.fa.nta.sy/posts/2026-05-28-google-redirects/</link>
+				<pubDate>Thu, 28 May 2026 19:34:33 -0400</pubDate>
+				<guid>http://blog.fa.nta.sy/posts/2026-05-28-google-redirects/</guid>
+				<description>Google has a multitude of open redirects that are frequently abused by threat actors. They are used to both deter initial URL scanning and obfuscate the final phishing URL. A recent example of this in the wild found by KnowBe4 showcased combining multiple redirects in a row. Google seemingly has no interest in fixing these issues according to their VRP. These redirects span different Google domains and products including Search, Meet and Ads (formerly DoubleClick).</description>
+			</item>
 			<item>
 				<title>No, your phishing kit does not have a Cloudflare bypass</title>
 				<link>http://blog.fa.nta.sy/posts/2026-04-13-not-a-cloudflare-bypass/</link>

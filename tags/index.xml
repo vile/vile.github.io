@@ -14,6 +14,13 @@
 		
 			<atom:link href="http://blog.fa.nta.sy/tags/index.xml" rel="self" type="application/rss+xml" />
 			<item>
+				<title>Appsec</title>
+				<link>http://blog.fa.nta.sy/tags/appsec/</link>
+				<pubDate>Thu, 28 May 2026 19:34:33 -0400</pubDate>
+				<guid>http://blog.fa.nta.sy/tags/appsec/</guid>
+				<description></description>
+			</item>
+			<item>
 				<title>Default</title>
 				<link>http://blog.fa.nta.sy/tags/default/</link>
 				<pubDate>Thu, 28 May 2026 19:34:33 -0400</pubDate>
@@ -21,24 +28,17 @@
 				<description></description>
 			</item>
 			<item>
-				<title>Appsec</title>
-				<link>http://blog.fa.nta.sy/tags/appsec/</link>
-				<pubDate>Wed, 20 May 2026 11:16:29 -0400</pubDate>
-				<guid>http://blog.fa.nta.sy/tags/appsec/</guid>
+				<title>Phishing</title>
+				<link>http://blog.fa.nta.sy/tags/phishing/</link>
+				<pubDate>Thu, 28 May 2026 19:34:33 -0400</pubDate>
+				<guid>http://blog.fa.nta.sy/tags/phishing/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>Web</title>
 				<link>http://blog.fa.nta.sy/tags/web/</link>
-				<pubDate>Wed, 20 May 2026 11:16:29 -0400</pubDate>
+				<pubDate>Thu, 28 May 2026 19:34:33 -0400</pubDate>
 				<guid>http://blog.fa.nta.sy/tags/web/</guid>
-				<description></description>
-			</item>
-			<item>
-				<title>Phishing</title>
-				<link>http://blog.fa.nta.sy/tags/phishing/</link>
-				<pubDate>Mon, 13 Apr 2026 16:05:35 -0400</pubDate>
-				<guid>http://blog.fa.nta.sy/tags/phishing/</guid>
 				<description></description>
 			</item>
 			<item>
